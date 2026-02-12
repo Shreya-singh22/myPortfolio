@@ -106,7 +106,7 @@ body {
     right: 0;
     bottom: 0;
     background: radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -220,7 +220,7 @@ body {
 
 .education-card {
     background: var(--bg-card);
-    padding: 0;
+    padding: 2rem;
     border-radius: 1.25rem;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
@@ -278,7 +278,7 @@ body {
 
 .skill-category {
     background: var(--bg-card);
-    padding: 0;
+    padding: 2rem;
     border-radius: 1.25rem;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
