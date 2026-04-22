@@ -17,9 +17,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+        navbar.classList.remove('scrolled');
     }
 });
 
@@ -32,16 +32,32 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Only animate once
         }
     });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('.section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+// Observe all fade-in elements
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+
+// Typewriter effect for Hero Subtitle
+const subtitleText = "Computer Science Engineering Student | AI Enthusiast | Full-Stack Developer";
+const typewriterElement = document.getElementById('typewriter');
+let i = 0;
+
+function typeWriter() {
+    if (i < subtitleText.length) {
+        typewriterElement.innerHTML += subtitleText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50); // Typing speed
+    }
+}
+
+// Start typewriter when document is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Add small delay before typing starts
+    setTimeout(typeWriter, 500);
 });
