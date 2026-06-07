@@ -280,27 +280,6 @@ if (!prefersReduced) {
   ruleEls.forEach((el) => ruleObs.observe(el));
 
 
-  /* -------- SKILL PILLS STAGGER -------- */
-  const allPills = document.querySelectorAll('.pill');
-
-  const pillObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const pills = entry.target.querySelectorAll('.pill');
-          pills.forEach((pill, i) => {
-            setTimeout(() => pill.classList.add('revealed'), i * 40);
-          });
-          pillObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  document.querySelectorAll('.skill-pills').forEach((group) => {
-    pillObserver.observe(group);
-  });
 
 
   /* -------- COUNT-UP STATS -------- */
@@ -369,7 +348,7 @@ if (!prefersReduced) {
     animateRing();
 
     // Expand ring on interactive elements
-    document.querySelectorAll('a, button, .pill, .project-card, .stat-card, .cert-card').forEach((el) => {
+    document.querySelectorAll('a, button, .skill-card, .project-card, .stat-card, .cert-card').forEach((el) => {
       el.addEventListener('mouseenter', () => cursorRing.classList.add('hovering'));
       el.addEventListener('mouseleave', () => cursorRing.classList.remove('hovering'));
     });
@@ -395,7 +374,7 @@ if (!prefersReduced) {
     el.style.opacity   = '1';
     el.style.transform = 'none';
   });
-  document.querySelectorAll('.pill').forEach((p) => {
+  document.querySelectorAll('.skill-card').forEach((p) => {
     p.style.opacity   = '1';
     p.style.transform = 'none';
   });

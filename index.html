@@ -199,64 +199,269 @@
         <h2 class="section-heading" id="skills-heading" data-reveal>Technical Skills</h2>
         <div class="section-rule" data-reveal></div>
 
-        <div class="skills-wrapper">
-          <div class="skill-group" data-reveal>
-            <span class="skill-group-label">Languages</span>
-            <div class="skill-pills">
-              <span class="pill">Java</span>
-              <span class="pill">Python</span>
-              <span class="pill">C++</span>
-              <span class="pill">JavaScript</span>
-              <span class="pill">Rust</span>
+        <div class="skills-interactive-container">
+          <!-- Scatter View (Desktop) -->
+          <div class="skills-scatter-view" data-reveal role="list">
+            <!-- Card 1: React -->
+            <div class="skill-card float-a" style="--top: 8%; --left: 5%; --brand-color: #61DAFB; --brand-glow: rgba(97,218,251,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/react/61dafb" alt="React logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">React</span>
+            </div>
+            <!-- Card 2: Python -->
+            <div class="skill-card float-b" style="--top: 15%; --left: 22%; --brand-color: #3776AB; --brand-glow: rgba(55,118,171,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/python/3776ab" alt="Python logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Python</span>
+            </div>
+            <!-- Card 3: JavaScript -->
+            <div class="skill-card float-c" style="--top: 5%; --left: 42%; --brand-color: #F7DF1E; --brand-glow: rgba(247,223,30,0.2);" role="listitem">
+              <img src="https://cdn.simpleicons.org/javascript/f7df1e" alt="JavaScript logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <!-- Card 4: TypeScript -->
+            <div class="skill-card float-a" style="--top: 12%; --left: 62%; --brand-color: #3178C6; --brand-glow: rgba(49,120,198,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/typescript/3178c6" alt="TypeScript logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">TypeScript</span>
+            </div>
+            <!-- Card 5: Node.js -->
+            <div class="skill-card float-b" style="--top: 8%; --left: 82%; --brand-color: #339933; --brand-glow: rgba(51,153,51,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Node.js</span>
+            </div>
+            <!-- Card 6: Java -->
+            <div class="skill-card float-c" style="--top: 35%; --left: 12%; --brand-color: #F89820; --brand-glow: rgba(248,152,32,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/java/f89820" alt="Java logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Java</span>
+            </div>
+            <!-- Card 7: Next.js -->
+            <div class="skill-card float-a" style="--top: 38%; --left: 32%; --brand-color: var(--text-primary); --brand-glow: var(--accent-glow);" role="listitem">
+              <svg class="skill-logo nextjs-logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path d="M18.665 21.978L7.147 6.425C6.467 7.502 6.071 8.784 6.071 10.15c0 3.754 3.036 6.8 6.782 6.8a6.762 6.762 0 0 0 5.812-3.268zM12.853 3.4c-2.316 0-4.385 1.157-5.65 2.932l11.455 15.44a6.776 6.776 0 0 0 1.954-4.836c0-3.756-3.037-6.8-6.759-6.8zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="currentColor"/>
+              </svg>
+              <span class="skill-name">Next.js</span>
+            </div>
+            <!-- Card 8: C++ -->
+            <div class="skill-card float-b" style="--top: 32%; --left: 52%; --brand-color: #00599C; --brand-glow: rgba(0,89,156,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/cplusplus/00599c" alt="C++ logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">C++</span>
+            </div>
+            <!-- Card 9: Docker -->
+            <div class="skill-card float-c" style="--top: 36%; --left: 75%; --brand-color: #2496ED; --brand-glow: rgba(36,150,237,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Docker</span>
+            </div>
+            <!-- Card 10: Git -->
+            <div class="skill-card float-a" style="--top: 58%; --left: 6%; --brand-color: #F05032; --brand-glow: rgba(240,80,50,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/git/f05032" alt="Git logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Git</span>
+            </div>
+            <!-- Card 11: VS Code -->
+            <div class="skill-card float-b" style="--top: 62%; --left: 24%; --brand-color: #007ACC; --brand-glow: rgba(0,122,204,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/visualstudiocode/007acc" alt="VS Code logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">VS Code</span>
+            </div>
+            <!-- Card 12: Figma -->
+            <div class="skill-card float-c" style="--top: 55%; --left: 45%; --brand-color: #F24E1E; --brand-glow: rgba(242,78,30,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/figma/f24e1e" alt="Figma logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Figma</span>
+            </div>
+            <!-- Card 13: MongoDB -->
+            <div class="skill-card float-a" style="--top: 60%; --left: 65%; --brand-color: #47A248; --brand-glow: rgba(71,162,72,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/mongodb/47a248" alt="MongoDB logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">MongoDB</span>
+            </div>
+            <!-- Card 14: MySQL -->
+            <div class="skill-card float-b" style="--top: 58%; --left: 85%; --brand-color: #4479A1; --brand-glow: rgba(68,121,161,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/mysql/4479a1" alt="MySQL logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">MySQL</span>
+            </div>
+            <!-- Card 15: Tailwind CSS -->
+            <div class="skill-card float-c" style="--top: 80%; --left: 15%; --brand-color: #06B6D4; --brand-glow: rgba(6,182,212,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/tailwindcss/06b6d4" alt="Tailwind CSS logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Tailwind CSS</span>
+            </div>
+            <!-- Card 16: Firebase -->
+            <div class="skill-card float-a" style="--top: 82%; --left: 36%; --brand-color: #FFCA28; --brand-glow: rgba(255,202,40,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/firebase/ffca28" alt="Firebase logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Firebase</span>
+            </div>
+            <!-- Card 17: Rust -->
+            <div class="skill-card float-b" style="--top: 78%; --left: 56%; --brand-color: #CE412B; --brand-glow: rgba(206,65,43,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/rust/ce412b" alt="Rust logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">Rust</span>
+            </div>
+            <!-- Card 18: TensorFlow -->
+            <div class="skill-card float-c" style="--top: 80%; --left: 78%; --brand-color: #FF6F00; --brand-glow: rgba(255,111,0,0.25);" role="listitem">
+              <img src="https://cdn.simpleicons.org/tensorflow/ff6f00" alt="TensorFlow logo" class="skill-logo" loading="lazy" />
+              <span class="skill-name">TensorFlow</span>
             </div>
           </div>
 
-          <div class="skill-group" data-reveal>
-            <span class="skill-group-label">Frameworks</span>
-            <div class="skill-pills">
-              <span class="pill">React</span>
-              <span class="pill">Node.js</span>
-              <span class="pill">Next.js</span>
-              <span class="pill">TypeScript</span>
-            </div>
-          </div>
+          <!-- Mobile Fallback Marquee (Pure CSS) -->
+          <div class="skills-marquee-view" data-reveal>
+            <!-- Row 1: scrolls left -->
+            <div class="marquee-row marquee-row-left">
+              <div class="marquee-content" role="list">
+                <!-- Group 1 Skills -->
+                <div class="skill-card" style="--brand-color: #61DAFB; --brand-glow: rgba(97,218,251,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/react/61dafb" alt="React logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">React</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #3776AB; --brand-glow: rgba(55,118,171,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/python/3776ab" alt="Python logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F7DF1E; --brand-glow: rgba(247,223,30,0.2);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/javascript/f7df1e" alt="JavaScript logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #3178C6; --brand-glow: rgba(49,120,198,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/typescript/3178c6" alt="TypeScript logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">TypeScript</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #339933; --brand-glow: rgba(51,153,51,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Node.js</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F89820; --brand-glow: rgba(248,152,32,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/java/f89820" alt="Java logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-card" style="--brand-color: var(--text-primary); --brand-glow: var(--accent-glow);" role="listitem">
+                  <svg class="skill-logo nextjs-logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path d="M18.665 21.978L7.147 6.425C6.467 7.502 6.071 8.784 6.071 10.15c0 3.754 3.036 6.8 6.782 6.8a6.762 6.762 0 0 0 5.812-3.268zM12.853 3.4c-2.316 0-4.385 1.157-5.65 2.932l11.455 15.44a6.776 6.776 0 0 0 1.954-4.836c0-3.756-3.037-6.8-6.759-6.8zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="currentColor"/>
+                  </svg>
+                  <span class="skill-name">Next.js</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #00599C; --brand-glow: rgba(0,89,156,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/cplusplus/00599c" alt="C++ logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">C++</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #2496ED; --brand-glow: rgba(36,150,237,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Docker</span>
+                </div>
 
-          <div class="skill-group" data-reveal>
-            <span class="skill-group-label">Databases</span>
-            <div class="skill-pills">
-              <span class="pill">Firebase</span>
-              <span class="pill">MongoDB</span>
-              <span class="pill">MySQL</span>
+                <!-- Duplicate for seamless scroll -->
+                <div class="skill-card" style="--brand-color: #61DAFB; --brand-glow: rgba(97,218,251,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/react/61dafb" alt="React logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">React</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #3776AB; --brand-glow: rgba(55,118,171,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/python/3776ab" alt="Python logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F7DF1E; --brand-glow: rgba(247,223,30,0.2);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/javascript/f7df1e" alt="JavaScript logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #3178C6; --brand-glow: rgba(49,120,198,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/typescript/3178c6" alt="TypeScript logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">TypeScript</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #339933; --brand-glow: rgba(51,153,51,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Node.js</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F89820; --brand-glow: rgba(248,152,32,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/java/f89820" alt="Java logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-card" style="--brand-color: var(--text-primary); --brand-glow: var(--accent-glow);" role="listitem">
+                  <svg class="skill-logo nextjs-logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path d="M18.665 21.978L7.147 6.425C6.467 7.502 6.071 8.784 6.071 10.15c0 3.754 3.036 6.8 6.782 6.8a6.762 6.762 0 0 0 5.812-3.268zM12.853 3.4c-2.316 0-4.385 1.157-5.65 2.932l11.455 15.44a6.776 6.776 0 0 0 1.954-4.836c0-3.756-3.037-6.8-6.759-6.8zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="currentColor"/>
+                  </svg>
+                  <span class="skill-name">Next.js</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #00599C; --brand-glow: rgba(0,89,156,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/cplusplus/00599c" alt="C++ logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">C++</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #2496ED; --brand-glow: rgba(36,150,237,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Docker</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="skill-group" data-reveal>
-            <span class="skill-group-label">Tools</span>
-            <div class="skill-pills">
-              <span class="pill">Git</span>
-              <span class="pill">IntelliJ IDEA</span>
-              <span class="pill">VS Code</span>
-              <span class="pill">Docker</span>
-            </div>
-          </div>
+            <!-- Row 2: scrolls right -->
+            <div class="marquee-row marquee-row-right">
+              <div class="marquee-content" role="list">
+                <!-- Group 2 Skills -->
+                <div class="skill-card" style="--brand-color: #06B6D4; --brand-glow: rgba(6,182,212,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/tailwindcss/06b6d4" alt="Tailwind CSS logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Tailwind CSS</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #FFCA28; --brand-glow: rgba(255,202,40,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/firebase/ffca28" alt="Firebase logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Firebase</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #47A248; --brand-glow: rgba(71,162,72,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/mongodb/47a248" alt="MongoDB logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">MongoDB</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #4479A1; --brand-glow: rgba(68,121,161,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/mysql/4479a1" alt="MySQL logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">MySQL</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F05032; --brand-glow: rgba(240,80,50,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/git/f05032" alt="Git logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #007ACC; --brand-glow: rgba(0,122,204,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/visualstudiocode/007acc" alt="VS Code logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">VS Code</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F24E1E; --brand-glow: rgba(242,78,30,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/figma/f24e1e" alt="Figma logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Figma</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #CE412B; --brand-glow: rgba(206,65,43,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/rust/ce412b" alt="Rust logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Rust</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #FF6F00; --brand-glow: rgba(255,111,0,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/tensorflow/ff6f00" alt="TensorFlow logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">TensorFlow</span>
+                </div>
 
-          <div class="skill-group" data-reveal>
-            <span class="skill-group-label">Concepts</span>
-            <div class="skill-pills">
-              <span class="pill">DSA</span>
-              <span class="pill">OOP</span>
-              <span class="pill">DBMS</span>
-              <span class="pill">Operating Systems</span>
-              <span class="pill">Cloud Computing</span>
-            </div>
-          </div>
-
-          <div class="skill-group" data-reveal>
-            <span class="skill-group-label">Design &amp; Process</span>
-            <div class="skill-pills">
-              <span class="pill">UI/UX Design</span>
-              <span class="pill">Agile Methodologies</span>
-              <span class="pill">Figma</span>
+                <!-- Duplicate for seamless scroll -->
+                <div class="skill-card" style="--brand-color: #06B6D4; --brand-glow: rgba(6,182,212,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/tailwindcss/06b6d4" alt="Tailwind CSS logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Tailwind CSS</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #FFCA28; --brand-glow: rgba(255,202,40,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/firebase/ffca28" alt="Firebase logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Firebase</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #47A248; --brand-glow: rgba(71,162,72,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/mongodb/47a248" alt="MongoDB logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">MongoDB</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #4479A1; --brand-glow: rgba(68,121,161,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/mysql/4479a1" alt="MySQL logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">MySQL</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F05032; --brand-glow: rgba(240,80,50,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/git/f05032" alt="Git logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #007ACC; --brand-glow: rgba(0,122,204,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/visualstudiocode/007acc" alt="VS Code logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">VS Code</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #F24E1E; --brand-glow: rgba(242,78,30,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/figma/f24e1e" alt="Figma logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Figma</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #CE412B; --brand-glow: rgba(206,65,43,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/rust/ce412b" alt="Rust logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">Rust</span>
+                </div>
+                <div class="skill-card" style="--brand-color: #FF6F00; --brand-glow: rgba(255,111,0,0.25);" role="listitem">
+                  <img src="https://cdn.simpleicons.org/tensorflow/ff6f00" alt="TensorFlow logo" class="skill-logo" loading="lazy" />
+                  <span class="skill-name">TensorFlow</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
