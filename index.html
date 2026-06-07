@@ -1,328 +1,531 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shreya Singh - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Singh Chauhan — Full Stack Developer</title>
+  <meta name="description" content="Computer Science undergraduate at Bennett University and Full Stack Developer Intern at Evoc Labs. Building scalable, user-focused applications with clean code and thoughtful design." />
+  <meta property="og:title" content="Shreya Singh Chauhan — Full Stack Developer" />
+  <meta property="og:description" content="CS @ Bennett University · Full Stack Developer · AI/ML Enthusiast. Building things that matter." />
+  <meta property="og:image" content="./assets/og-image.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23060d18'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' dy='0.1em' font-family='sans-serif' font-weight='bold' fill='%2338bdf8'>S</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- Background Animated Blobs -->
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+  <!-- Custom Cursor -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Noise Grain Texture -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Shreya Singh Chauhan — home">SC</a>
+
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#community" class="nav-link" data-section="community">Community</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certs</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <!-- Moon icon (dark mode) -->
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun icon (light mode) -->
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+
+        <a href="./assets/Shreya_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="nav-resume-btn">View Resume</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">Shreya Singh</div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <canvas id="dot-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-name-wrap" aria-label="Shreya Singh Chauhan">
+          <span class="hero-word" aria-hidden="true">SHREYA</span>
+          <span class="hero-word" aria-hidden="true">SINGH</span>
+          <span class="hero-word accent" aria-hidden="true">CHAUHAN</span>
+        </div>
+
+        <p class="hero-subtitle" aria-live="polite">
+          <span id="typewriter-text"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" id="hero-work-btn">View My Work →</a>
+          <a href="./assets/Shreya_Singh_Chauhan_Resume.pdf" download="Shreya_Singh_Chauhan_Resume.pdf" class="btn btn-outline" id="hero-resume-btn">Download Resume ↓</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Shreya-singh22" target="_blank" rel="noopener noreferrer" class="social-link" id="hero-github-link" aria-label="GitHub profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/shreya-chauhan94" target="_blank" rel="noopener noreferrer" class="social-link" id="hero-linkedin-link" aria-label="LinkedIn profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 class="section-heading" id="about-heading" data-reveal>About Me</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <div class="about-grid">
+          <div class="about-bio" data-reveal>
+            <p>Computer Science undergraduate with a strong foundation in Data Structures and Algorithms. I build scalable, user-focused applications with clean code and thoughtful design — from AI-powered mental health platforms to real-time sign language translators. I love solving problems that matter.</p>
+            <p style="margin-top: 1.25rem;">Currently interning at <span class="accent-text">Evoc Labs</span> as a Full Stack Developer, shipping production-ready features with React.js and TypeScript. I believe that the best interfaces are the ones you barely notice — because they just work.</p>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card" data-reveal data-count="8.97" data-suffix="" data-decimals="2" id="stat-cgpa">
+              <div class="stat-number">0</div>
+              <div class="stat-label">CGPA</div>
+            </div>
+            <div class="stat-card" data-reveal data-count="1000" data-suffix="+" id="stat-users">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Monthly Users</div>
+            </div>
+            <div class="stat-card" data-reveal data-count="92" data-suffix="%" id="stat-accuracy">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Model Accuracy</div>
+            </div>
+            <div class="stat-card" data-reveal data-count="10" data-suffix="+" id="stat-events">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Events Organized</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 class="section-heading" id="education-heading" data-reveal>Education</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <article class="timeline-item" data-reveal data-reveal-dir="left">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-period">2023 – 2027</span>
+              </div>
+              <h3 class="timeline-title">Bennett University, Greater Noida</h3>
+              <p class="timeline-sub">B.Tech — Computer Science &amp; Engineering</p>
+              <p class="timeline-detail"><span class="accent-text">CGPA: 8.97</span></p>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-reveal data-reveal-dir="left">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-period">2023</span>
+              </div>
+              <h3 class="timeline-title">City Montessori School, Lucknow</h3>
+              <p class="timeline-sub">Class XII — CBSE</p>
+              <p class="timeline-detail"><span class="accent-text">96.7%</span></p>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-reveal data-reveal-dir="left">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-period">2021</span>
+              </div>
+              <h3 class="timeline-title">City Montessori School, Lucknow</h3>
+              <p class="timeline-sub">Class X — CBSE</p>
+              <p class="timeline-detail"><span class="accent-text">91.6%</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 class="section-heading" id="skills-heading" data-reveal>Technical Skills</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <div class="skills-wrapper">
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-label">Languages</span>
+            <div class="skill-pills">
+              <span class="pill">Java</span>
+              <span class="pill">Python</span>
+              <span class="pill">C++</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">Rust</span>
+            </div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-label">Frameworks</span>
+            <div class="skill-pills">
+              <span class="pill">React</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">Next.js</span>
+              <span class="pill">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-label">Databases</span>
+            <div class="skill-pills">
+              <span class="pill">Firebase</span>
+              <span class="pill">MongoDB</span>
+              <span class="pill">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-label">Tools</span>
+            <div class="skill-pills">
+              <span class="pill">Git</span>
+              <span class="pill">IntelliJ IDEA</span>
+              <span class="pill">VS Code</span>
+              <span class="pill">Docker</span>
+            </div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-label">Concepts</span>
+            <div class="skill-pills">
+              <span class="pill">DSA</span>
+              <span class="pill">OOP</span>
+              <span class="pill">DBMS</span>
+              <span class="pill">Operating Systems</span>
+              <span class="pill">Cloud Computing</span>
+            </div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-label">Design &amp; Process</span>
+            <div class="skill-pills">
+              <span class="pill">UI/UX Design</span>
+              <span class="pill">Agile Methodologies</span>
+              <span class="pill">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 class="section-heading" id="projects-heading" data-reveal>Featured Projects</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <div class="project-header">
+                <div class="project-period">Jan 2024 – Apr 2024</div>
+                <h3 class="project-title">You Matter Now</h3>
+                <p class="project-tagline">Mental Health Platform</p>
+              </div>
+              <div class="project-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+
+            <p class="project-desc">A safe-space mental health platform with a 24/7 AI chatbot, personalized self-assessments, geolocation-based doctor booking, and journaling features.</p>
+
+            <div class="project-tags">
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Gemini API</span>
+              <span class="tech-pill">LangChain</span>
+              <span class="tech-pill">Hugging Face</span>
+            </div>
+
+            <div class="impact-row">
+              <span class="impact-badge">1,000+ Monthly Users</span>
+              <span class="impact-badge">85% User Satisfaction</span>
+              <span class="impact-badge">30% More Bookings</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://you-matter-games-journal-main.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="proj1-demo-link">Live Demo ↗</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <div class="project-header">
+                <div class="project-period">Aug 2025 – Nov 2025</div>
+                <h3 class="project-title">Sign Language AI</h3>
+                <p class="project-tagline">Real-Time Gesture Translator</p>
+              </div>
+              <div class="project-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              </div>
+            </div>
+
+            <p class="project-desc">Real-time gesture-to-text translation system using a CNN trained on MediaPipe hand landmark data, processing live video with near-zero latency.</p>
+
+            <div class="project-tags">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">CNN</span>
+              <span class="tech-pill">MediaPipe</span>
+              <span class="tech-pill">TensorFlow</span>
+            </div>
+
+            <div class="impact-row">
+              <span class="impact-badge">92% Accuracy</span>
+              <span class="impact-badge">&lt;100ms Latency</span>
+              <span class="impact-badge">Real-time Video</span>
+            </div>
+
+            <div class="project-links">
+              <span class="project-note">Research Project</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 class="section-heading" id="experience-heading" data-reveal>Professional Experience</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <article class="exp-card" data-reveal data-reveal-dir="right">
+          <div class="exp-left">
+            <h3 class="exp-company">Evoc Labs</h3>
+            <p class="exp-location">India</p>
+            <span class="exp-period">Jan 2026 – May 2026</span>
+            <span class="exp-badge">Full Stack Developer Intern</span>
+          </div>
+          <div class="exp-right">
+            <ul class="exp-bullets" role="list">
+              <li>Developed responsive web applications using React.js and TypeScript, improving page load performance and user experience</li>
+              <li>Built reusable UI components, reducing development time by <span class="accent-text">30%</span> and improving code scalability</li>
+              <li>Collaborated with backend and design teams to ship <span class="accent-text">10+ production-ready features</span> aligned with business requirements</li>
             </ul>
-        </div>
-    </nav>
-
-    <section id="hero" class="hero fade-in">
-        <div class="hero-container">
-            <h1 class="hero-title">Hi, I'm <span class="gradient-text">Shreya Singh</span></h1>
-            <p class="hero-subtitle typewriter" id="typewriter"></p>
-            <div class="hero-links">
-                <a href="https://github.com/Shreya-singh22" target="_blank" class="btn btn-primary">GitHub</a>
-                <a href="https://www.linkedin.com/in/shreya-chauhan94" target="_blank" class="btn btn-secondary">LinkedIn</a>
-            </div>
-        </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="about" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>About Me</span></h2>
-            <div class="about-content glass-panel">
-                <p class="about-text">
-                    Adaptable professional with quick-learning ability and talent for adjusting to new environments.
-                    Skilled in rapidly acquiring new knowledge and applying it effectively. Passionate about continuous
-                    learning and embracing innovation in dynamic workspaces.
-                </p>
+    <!-- ============ COMMUNITY ============ -->
+    <section id="community" class="section" aria-labelledby="community-heading">
+      <div class="container">
+        <h2 class="section-heading" id="community-heading" data-reveal>Community &amp; Volunteering</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <div class="community-row">
+          <article class="community-card" data-reveal>
+            <div class="community-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
+            <h3 class="community-role">Social Media Head</h3>
+            <p class="community-org">CodeChef BU, Greater Noida</p>
+            <p class="community-period">May 2024 – Feb 2025</p>
+            <p class="community-impact">Organized <span class="accent-text">10+ technical events</span> and coordinated cross-functional teams</p>
+          </article>
+
+          <article class="community-card" data-reveal>
+            <div class="community-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="community-role">Core Member</h3>
+            <p class="community-org">Career Advancement Club, Greater Noida</p>
+            <p class="community-period">May 2024 – Present</p>
+            <p class="community-impact">Conducted <span class="accent-text">5+ workshops</span> with industry professionals</p>
+          </article>
+
+          <article class="community-card" data-reveal>
+            <div class="community-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="community-role">Volunteer</h3>
+            <p class="community-org">Zenevia Tech Fest, Greater Noida</p>
+            <p class="community-period">Feb 2024</p>
+            <p class="community-impact">Boosted online engagement by <span class="accent-text">60%</span> through social media campaigns</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="education" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>Education</span></h2>
-            <div class="education-grid">
-                <div class="education-card glass-card">
-                    <div class="education-header">
-                        <h3>Bachelor of Technology – Computer Science and Engineering</h3>
-                        <span class="education-date">Expected June 2027</span>
-                    </div>
-                    <p class="education-institution">Bennett University, Greater Noida, Uttar Pradesh</p>
-                    <p class="education-detail">Current CGPA: <strong>8.97</strong></p>
-                </div>
-                <div class="education-card glass-card">
-                    <div class="education-header">
-                        <h3>Senior Secondary (Class 12th)</h3>
-                        <span class="education-date">May 2023</span>
-                    </div>
-                    <p class="education-institution">City Montessori School, Lucknow</p>
-                    <p class="education-detail">Percentage: <strong>96.7%</strong></p>
-                </div>
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" class="section" aria-labelledby="certs-heading">
+      <div class="container">
+        <h2 class="section-heading" id="certs-heading" data-reveal>Certifications</h2>
+        <div class="section-rule" data-reveal></div>
+
+        <div class="certs-grid">
+
+          <article class="cert-card" data-reveal>
+            <div class="cert-img-wrap">
+              <img src="./assets/certificates/data_structures.png" alt="Data Structures certificate from UC San Diego" class="cert-img" loading="lazy" />
             </div>
+            <div class="cert-body">
+              <h3 class="cert-title">Data Structures</h3>
+              <p class="cert-issuer">University of California, San Diego · Coursera</p>
+              <a href="https://coursera.org/share/10b8ab19664be070f4f5e2f5a5e78f74" target="_blank" rel="noopener noreferrer" class="cert-link" id="cert1-link">
+                View Certificate ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="cert-card" data-reveal>
+            <div class="cert-img-wrap">
+              <img src="./assets/certificates/cuda_c.png" alt="NVIDIA CUDA C++ certificate" class="cert-img" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-title">Accelerated Computing in Modern CUDA C++</h3>
+              <p class="cert-issuer">NVIDIA</p>
+              <span class="cert-link-disabled">Certificate on file</span>
+            </div>
+          </article>
+
+          <article class="cert-card" data-reveal>
+            <div class="cert-img-wrap">
+              <img src="./assets/certificates/docker.png" alt="Docker for the Absolute Beginner certificate" class="cert-img" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-title">Docker for the Absolute Beginner</h3>
+              <p class="cert-issuer">Packt · Coursera</p>
+              <a href="https://coursera.org/share/0938fe0ac6a2b0655bc4ad57a6deb626" target="_blank" rel="noopener noreferrer" class="cert-link" id="cert3-link">
+                View Certificate ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="cert-card" data-reveal>
+            <div class="cert-img-wrap">
+              <img src="./assets/certificates/dynamic_programming.png" alt="Dynamic Programming certificate from University of Colorado Boulder" class="cert-img" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-title">Dynamic Programming &amp; Greedy Algorithms</h3>
+              <p class="cert-issuer">University of Colorado Boulder · Coursera</p>
+              <a href="https://coursera.org/share/f8fd0b5281ce641e17a88dbdd2f602d0" target="_blank" rel="noopener noreferrer" class="cert-link" id="cert4-link">
+                View Certificate ↗
+              </a>
+            </div>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <section id="skills" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>Technical Skills</span></h2>
-            <div class="skills-container">
-                <div class="skill-category glass-card">
-                    <h3 class="skill-category-title">Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">English</span>
-                        <span class="skill-tag">Hindi</span>
-                        <span class="skill-tag">German A1</span>
-                    </div>
-                </div>
-                <div class="skill-category glass-card">
-                    <h3 class="skill-category-title">Programming</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
-                </div>
-                <div class="skill-category glass-card">
-                    <h3 class="skill-category-title">Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">Figma</span>
-                    </div>
-                </div>
-                <div class="skill-category glass-card">
-                    <h3 class="skill-category-title">Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Windows</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">GCP</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
-                </div>
-                <div class="skill-category glass-card">
-                    <h3 class="skill-category-title">Other</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">UI Design</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Cloud Computing</span>
-                        <span class="skill-tag">Social Media Strategy</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 class="section-heading contact-heading" id="contact-heading" data-reveal>Let's build something<br /><span class="accent-text">together.</span></h2>
+        <div class="section-rule" data-reveal></div>
+
+        <p class="contact-sub" data-reveal>Open to internships, collaborations, and projects that matter.</p>
+
+        <div class="contact-details" data-reveal>
+          <a href="mailto:chauhanshreyasingh94@gmail.com" class="contact-item" id="contact-email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            chauhanshreyasingh94@gmail.com
+          </a>
+          <span class="contact-item contact-item--plain" id="contact-phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91-8177013032
+          </span>
+          <a href="https://www.linkedin.com/in/shreya-chauhan94" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            linkedin.com/in/shreya-chauhan94
+          </a>
+          <a href="https://github.com/Shreya-singh22" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            github.com/Shreya-singh22
+          </a>
         </div>
+
+        <div class="contact-cta" data-reveal>
+          <a href="./assets/Shreya_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="contact-view-resume">View Resume ↗</a>
+          <a href="./assets/Shreya_Singh_Chauhan_Resume.pdf" download="Shreya_Singh_Chauhan_Resume.pdf" class="btn btn-outline" id="contact-download-resume">Download PDF ↓</a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section id="projects" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>Projects</span></h2>
-            <div class="projects-grid">
-                <div class="project-card glass-card">
-                    <div class="project-header">
-                        <h3>You Matter Now – Mental Health Platform</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Gemini API</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">Hugging Face</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Created a safe space with chatbot, self-assessment, doctor suggestions, and journaling.
-                    </p>
-                    <ul class="project-features">
-                        <li><strong>AI-powered support:</strong> 24/7 empathetic chatbot using Gemini API and LangChain; 1,000+ users monthly.</li>
-                        <li><strong>Personalized care:</strong> Tailored self-assessments with 85% user satisfaction via feedback surveys.</li>
-                        <li><strong>Accessible healthcare:</strong> Geolocation + ratings for doctors; increased successful bookings by 30%.</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="https://you-matter-games-journal-main.vercel.app/" target="_blank" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Live Demo</a>
-                    </div>
-                </div>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Shreya Singh Chauhan · Built with intention.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Shreya-singh22" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-icon-link" id="footer-github">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shreya-chauhan94" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-icon-link" id="footer-linkedin">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <button id="footer-theme-toggle" class="footer-theme-btn" aria-label="Toggle theme">
+          <svg id="footer-icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="footer-icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
 
-                <div class="project-card glass-card">
-                    <div class="project-header">
-                        <h3>YourSakhi – Women-Centric Help Platform</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">OpenAI API</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        AI chatbot for menstrual tracking and women's health support.
-                    </p>
-                    <ul class="project-features">
-                        <li><strong>Health tracking:</strong> Used by 700+ active users; 90% positive health outcomes reported.</li>
-                        <li><strong>Responsive design:</strong> Mobile-first UI, increasing traffic by 40%.</li>
-                        <li><strong>Resource empowerment:</strong> Reached 500+ women via curated resources and feedback loops.</li>
-                    </ul>
-                </div>
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-                <div class="project-card glass-card">
-                    <div class="project-header">
-                        <h3>AI-Based Sign Language Translator</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">CNN</span>
-                            <span class="tech-tag">MediaPipe</span>
-                            <span class="tech-tag">TensorFlow</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Real-time sign language recognition system translating gestures into text.
-                    </p>
-                    <ul class="project-features">
-                        <li><strong>Gesture recognition:</strong> Trained CNN model on hand landmark data extracted using MediaPipe; achieved high real-time accuracy.</li>
-                        <li><strong>Real-time inference:</strong> Live video input processed with low latency for seamless translation.</li>
-                        <li><strong>Accessibility impact:</strong> Enabled communication support for hearing- and speech-impaired users through AI-driven translation.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>Experience</span></h2>
-            <div class="experience-timeline">
-                <div class="experience-item glass-panel" style="background: transparent; box-shadow: none; border: none; backdrop-filter: none;">
-                    <div class="experience-date">May 2024 – Feb 2025</div>
-                    <div class="experience-content glass-card" style="margin-top: 10px;">
-                        <h3>Social Media Head</h3>
-                        <p class="experience-company">CodeChef BU, Greater Noida</p>
-                        <p class="experience-description">Led content strategy, boosting engagement by 40%. Organized tech events and outreach.</p>
-                    </div>
-                </div>
-                <div class="experience-item glass-panel" style="background: transparent; box-shadow: none; border: none; backdrop-filter: none;">
-                    <div class="experience-date">May 2024 – Present</div>
-                    <div class="experience-content glass-card" style="margin-top: 10px;">
-                        <h3>Core Member</h3>
-                        <p class="experience-company">Career Advancement Club, Greater Noida</p>
-                        <p class="experience-description">Led workshops and collaborated with professionals on career initiatives.</p>
-                    </div>
-                </div>
-                <div class="experience-item glass-panel" style="background: transparent; box-shadow: none; border: none; backdrop-filter: none;">
-                    <div class="experience-date">Feb 2024</div>
-                    <div class="experience-content glass-card" style="margin-top: 10px;">
-                        <h3>Volunteer</h3>
-                        <p class="experience-company">Zenevia Tech Fest, Greater Noida</p>
-                        <p class="experience-description">Drove social media reach; increased online engagement by 60%.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>Certifications</span></h2>
-            <div class="certifications-grid">
-                <div class="cert-card glass-card">
-                    <img src="assets/certificates/cuda_c.png" alt="NVIDIA CUDA C++ Certificate" class="cert-card-image">
-                    <div class="cert-card-content">
-                        <h3>Getting Started with Accelerated Computing in Modern CUDA C++</h3>
-                        <p>NVIDIA</p>
-                        <a href="#" class="cert-link">
-                            View Certificate
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="cert-card glass-card">
-                    <img src="assets/certificates/dynamic_programming.png" alt="Dynamic Programming Certificate" class="cert-card-image">
-                    <div class="cert-card-content">
-                        <h3>Dynamic Programming and Greedy Algorithms</h3>
-                        <p>University of Colorado Boulder (Coursera)</p>
-                        <a href="https://coursera.org/share/f8fd0b5281ce641e17a88dbdd2f602d0" target="_blank" class="cert-link">
-                            View Certificate
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="cert-card glass-card">
-                    <img src="assets/certificates/docker.png" alt="Docker Certificate" class="cert-card-image">
-                    <div class="cert-card-content">
-                        <h3>Docker for the Absolute Beginner</h3>
-                        <p>Coursera</p>
-                        <a href="https://coursera.org/share/0938fe0ac6a2b0655bc4ad57a6deb626" target="_blank" class="cert-link">
-                            View Certificate
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="cert-card glass-card">
-                    <img src="assets/certificates/data_structures.png" alt="Data Structures Certificate" class="cert-card-image">
-                    <div class="cert-card-content">
-                        <h3>Data Structures</h3>
-                        <p>University of California, San Diego (Coursera)</p>
-                        <a href="https://coursera.org/share/10b8ab19664be070f4f5e2f5a5e78f74" target="_blank" class="cert-link">
-                            View Certificate
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title"><span>Get In Touch</span></h2>
-            <div class="contact-content glass-panel">
-                <p class="contact-text">Feel free to reach out for collaborations or opportunities!</p>
-                <div class="contact-links">
-                    <a href="https://github.com/Shreya-singh22" target="_blank" class="contact-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/shreya-chauhan94" target="_blank" class="contact-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Shreya Singh. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
