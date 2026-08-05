@@ -53,11 +53,11 @@ Add an entry to the `projects` array in `src/data/content.ts`:
 }
 ```
 
-Project cards use a rotating set of gradient placeholders (`src/components/sections/ProjectCard.tsx`) instead of screenshots so there's nothing to break if an image is missing. To use real screenshots/GIFs instead, add an `image` field to the `Project` type and swap the gradient `div` for a `next/image` in `ProjectCard.tsx` and `ProjectModal.tsx`.
+Each project card shows a real screenshot of the live, logged-in app (`public/projects/*.png`) in a browser-chrome frame, with a two-stop `accent` gradient drawn from that product's own brand colors. To update a screenshot, replace the PNG at the path referenced by that project's `image` field in `content.ts`; to change the accent, edit the `accent: [string, string]` tuple.
 
 ### Résumé download
 
-The "Résumé" button in the hero links to `public/resume/Shreya-Singh-Resume.pdf`, which is **not included** in this repo. Drop your PDF at that exact path (or update `profile.resumeHref` in `content.ts`) before deploying.
+The "Résumé" button in the hero links to `public/resume/Shreya-Singh-Resume.pdf`, which is included in this repo. Replace it with an updated PDF at the same path (or update `profile.resumeHref` in `content.ts`) whenever your résumé changes.
 
 ### Contact form
 
@@ -91,12 +91,11 @@ src/
 ## Design notes
 
 - **Theme**: dark-mode-first with a violet → cyan → pink gradient accent, glassmorphism panels (`.glass-panel`), and a subtle background grid. Toggle in the nav switches to a light variant using the same CSS variables (`src/app/globals.css`).
-- **Motion**: scroll-triggered staggered reveals (`Reveal`/`RevealGroup`), magnetic buttons, animated nav underlines, a scramble-text hero headline, and a shared-layout project modal (Framer Motion `layoutId`).
+- **Motion**: scroll-triggered staggered reveals (`Reveal`/`RevealGroup`), magnetic buttons, animated nav underlines, a scramble-text hero headline, a cursor-following 3D tilt on project cards, and a shared-layout project modal (Framer Motion `layoutId`).
 - **Accessibility**: all interactive elements are real `button`/`a` elements, focus-visible via default browser outlines, the project modal traps Escape-to-close and locks body scroll, and every animation respects `prefers-reduced-motion` (the custom cursor and hero 3D scene are skipped entirely, Framer Motion transitions collapse to near-zero duration).
 - **Performance**: the R3F hero scene and its dependencies are code-split via `next/dynamic({ ssr: false })` so they never block first paint or load for reduced-motion users; below-the-fold sections stay in normal React (no heavy libraries) and rely on `whileInView` for scroll-in animation rather than a scroll-linked library.
 
 ## Known follow-ups
 
-- Add `public/resume/Shreya-Singh-Resume.pdf` (see above).
 - Double-check the AI Sign Language Translator's live URL before sharing — it's hosted on Render's free tier, which spins down on inactivity (`liveHref` in `content.ts`).
-- Swap gradient project thumbnails for real screenshots/GIFs once available.
+- Project screenshots are static captures; re-capture and replace the PNGs in `public/projects/` periodically as the live apps evolve.
