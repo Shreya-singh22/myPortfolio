@@ -61,7 +61,7 @@ export function Contact() {
             >
               <span className="flex items-center gap-3">
                 <Linkedin size={18} className="text-accent" />
-                <span className="text-sm">linkedin.com/in/shreyasingh</span>
+                <span className="text-sm">linkedin.com/in/shreya-chauhan-1026b9278</span>
               </span>
               <ArrowUpRight size={16} className="text-muted" />
             </a>

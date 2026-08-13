@@ -10,14 +10,14 @@ export const profile = {
   email: "chauhanshreyasingh94@gmail.com",
   phone: "+91-8177013032",
   links: {
-    linkedin: "https://linkedin.com/in/shreyasingh",
+    linkedin: "https://www.linkedin.com/in/shreya-chauhan-1026b9278",
     github: "https://github.com/Shreya-singh22",
   },
   resumeHref: "/resume/Shreya-Singh-Resume.pdf",
   languagesSpoken: ["English", "Hindi", "German"],
   bio: [
     "I'm a CS undergrad who ships real, deployed full-stack products — not tutorial clones sitting in a repo. Every project below is live, has real users, and taught me something a course never could.",
-    "I care about the details most people skip: read receipts that actually sync, calendar math that doesn't break at month boundaries, inference that runs in under 100ms. That's where the engineering actually happens.",
+    "I care about the details most people skip: read receipts that actually sync, an LLM's hallucinated line numbers caught before they reach a pull request, inference that runs in under 100ms. That's where the engineering actually happens.",
     `Outside of code, I speak ${["English", "Hindi", "German"].join(", ")}, and I'm usually the one organizing the event rather than just attending it.`,
   ],
 };
@@ -124,19 +124,24 @@ export const projects: Project[] = [
     accent: ["#60a5fa", "#2563eb"],
   },
   {
-    slug: "google-calendar-clone",
-    name: "Google Calendar Clone",
+    slug: "ai-pr-reviewer",
+    name: "AI PR Reviewer",
     summary:
-      "A rebuild of Google Calendar's core UI/UX and scheduling interactions.",
+      "A GitHub App that reviews every pull request automatically, in inline comments.",
     description:
-      "Recreates Google Calendar's day/week/month views, event creation and editing, and the date/scheduling logic that makes a calendar app deceptively hard to get right.",
-    tags: ["Complex UI state", "Calendar/date logic", "Frontend architecture"],
-    liveHref: "https://google-calendar-clone-iota.vercel.app/",
-    githubHref: "https://github.com/Shreya-singh22/google-calendar-clone",
+      "Install it on a repo and each PR fires a webhook that enqueues a job on a durable Postgres-backed queue. A worker claims it, sends the diff to Groq (Llama 3.3), validates the structured findings with zod, cross-checks each one against the real diff hunks so a hallucinated line number gets dropped instead of breaking the review, then posts the survivors as inline PR comments. A dashboard tracks review history and findings by severity across every enabled repo.",
+    impact: [
+      "Reviews open/updated PRs with no human in the loop",
+      "Durable queue via SELECT … FOR UPDATE SKIP LOCKED — no Redis",
+      "Hallucinated findings dropped before they reach GitHub",
+    ],
+    tags: ["AI/LLM integration", "GitHub App", "Job queues", "Backend architecture"],
+    liveHref: "https://code-review-assistant-bwf8.onrender.com",
+    githubHref: "https://github.com/Shreya-singh22/Code-review-assistant",
     featured: true,
-    image: "/projects/google-calendar-clone.png",
-    domain: "google-calendar-clone-iota.vercel.app",
-    accent: ["#4285f4", "#34a853"],
+    image: "/projects/ai-pr-reviewer.png",
+    domain: "code-review-assistant-bwf8.onrender.com",
+    accent: ["#f97316", "#8b5cf6"],
   },
 ];
 
